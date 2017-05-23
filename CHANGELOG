@@ -1,0 +1,103 @@
+v0.3
+	date 2014-08-01
+	- Compatibilidad con MongoDB
+	- Cambiando módulo de conexión a datos : mysql => mysqli
+	- Implementación de Dispatcher usando index.php y accediento a clases Controller.
+	- Implementación de capa de "Exceptions" controladas por index.php
+	- Variación de DataAccessGenerate para producir archivos para MongoDB
+	- Implementación de i18n a través de arreglos php.
+	- Creación de Templeates para MongoDB.
+	- Cración de archivo i18n es_ES.
+	- Implementación para la verificación de username y email.
+	- Eliminicación de Carpeta View/App y creación de View/Pages
+	- Modificación de footer.php e head.php; inclusión de header.php
+	- Añadido archivo .htaccess en Views
+	- Eliminación de carpeta webroot/ajax
+	- Inclusión de imágenes para jquery-ui
+	- Cambio de estilos
+	- Inclusión de "fonts"
+	- Cambio de nombre para images => img
+	- Se añade imagenes loader.png - wicons.png
+	- Se añade archivos views.js
+	- Se incluye archivo webroot/locale/es_ES en gruntfile.js y se por tanto cambia nombre a _es_ES
+	- Se incluye plugin validate.password.js
+	- Se actualiza plugin untInput
+	- Se actualiza .htaccess
+	- Se actualiza Gruntfile.js
+	- Se añade archivo robots.txt
+	- Se añade archivo de configuración para IIS (web.config)
+
+
+######################### DEPRECATED ###########################
+
+v0.2
+	date 2014-02-04
+	- Se añadio formulario de autenticación página de inicio
+	- Se completó controlador de autenticación.
+	- Se añadió archivo webroot/ajax/login.php
+	- Se añadió archivo webroot/ajax/logout.php
+	- Se añadio reglas en .htaccess para /rq/$1 y /ax/$1
+	- Se agrego estilo por defecto para formulario
+	- Se agregó función en home.js para mostrar errores
+	- Se agregó función getInstance() en User.class.php
+	- Se añadió página de inicio con autenticación (index)
+	- Se agrego script SQL skeleton
+	
+v0.1.7
+	date: 2013-10-07
+	- Se añadio función validateData() y WinNoSession() al bootstrap.js
+	- Se agregó funciones set<?>DTO y get<?>DTO en el template para la generación de los <Models>
+	- Se cambió la función getALL() de <Models> para retornar objeto concretos y no DTO's.
+	- Se añade librería jquery.validation.min.js
+
+v0.1.6.1
+	date: 2013-09-27
+	- Se organizó DataAccessGenerate para no generar problema con claves primarias no enteras (int)
+	- Se agregó función para leer archivos y sitios con curl.
+
+v0.1.6
+	date: 2013-08-27
+	- Se añadió archivo jquery-ui.styl
+	- Se modificó el archivo View/Layouts/head.php para incluir jquery-ui.styl
+	- Se añadio archivo jquery-ui.min.js
+	- Se modifico el archivo View/Layouts/footer.php para incluir librería jquery-ui.min.js
+	- Se añadieron metadatos en head.php
+v0.1.5
+	date: 2013-08-27
+	- Se permite campos con nombre igual a palabra reservada en MySQL anteponiendo comilla => "DataAccessGenerate.php"
+	- Se retira set(date) en Templates innecesario. Se corrige "IncludeDao.php" => DataAccessGenerate.php
+	- Se corrige método getMessage() => EmailConnection.php
+	- Se añade función onLoadContent() en plugin untInput
+	- Se elimina webroot/index.php
+	- Se implementa lógica de Authentication en index.php
+	- Se añade Auth.controller.php con lógica mínima de autenticación.
+v0.1.4
+	date: 2013-07-24
+	- Se cambia función mysql_escape_string a mysql_real_escape_string (para PHP 5.5.0 y superior) en SqlQuery.class.php*
+	- Se corrige error en Plugin untInputWin
+	- Se agregan estilos en untInputWin.styl
+	- Se cambia en DataAccessGenerate.php el nombre de archivo "IncludeDao.php" => "IncludeDAO.php"
+	- Se agrega [QSA] en reglas rewrite en arvhivo .htaccess
+
+v0.1.3
+	date: 2013-06-21
+	- Se implementa estilos para botones
+	- Se elimina función untInputBtn y estilos untBtn.styl del plugin untInput
+	- Se corrigen errores en la función untInputWin
+	- Se corrigen errores en Bootstrap relacionados con PRJCT_NAME
+v0.1.2
+	date: 2013-06-17
+	- Cambios en la constante PRJCT_NAME de los bootstrap
+	- Se añade mejora al plugin untInput para la función untInputWin
+	- Cambiando index.php para que reciba todas las peticiones a las vistas
+	
+v0.1.1:
+	date: 2013-06-13
+	- Se úbico Google Analytics en en Footer
+	- Se organizo el orden de main.styl
+	- Se suprimió evento ready de document
+	
+v0.1.0:
+  date: 2013-06-01
+  changes:
+    - Trabajo en Progreso, primera liberación oficial

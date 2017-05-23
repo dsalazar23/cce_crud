@@ -1,0 +1,5 @@
+Order Allow,Deny
+
+<Files "404.html">
+	Allow from all
+</Files>

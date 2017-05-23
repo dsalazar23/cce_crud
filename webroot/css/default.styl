@@ -1,0 +1,506 @@
+/*!
+ * Estilos por defecto para el proyecto
+ * @package     webroot
+ * @subpackage  css
+ * @author      JpBaena13
+ */
+prefix(prop, args)
+    -webkit-prop args
+    -moz-prop args
+    -ms-prop args
+    -o-prop args
+    prop args
+
+@font-face
+	font-family 'dosis_light'
+	src url('../fonts/dosis/Dosis-ExtraLight.ttf') format('truetype')
+	font-weight 200
+	font-style normal	
+
+@font-face
+	font-family 'dosis'
+	src url('../fonts/dosis/Dosis-Medium.ttf') format('truetype')
+	font-weight 500
+	font-style normal	
+
+@font-face
+	font-family 'dosis_bold'
+	src url('../fonts/dosis/Dosis-ExtraBold.ttf') format('truetype')
+	font-weight 800
+	font-style normal
+
+@font-face
+    font-family 'open_sans'    
+    src url('../fonts/open-sans/open_sans.ttf') format('truetype')
+    font-weight normal
+    font-style normal
+
+@font-face
+	font-family: 'icomoon'
+	src	url('../fonts/icomoon/icomoon.ttf?-5s3smd') format('truetype')
+	font-weight normal
+	font-style normal
+
+[class^="icon-"], [class*=" icon-"]
+	font-family 'icomoon'
+	speak none
+	font-style normal
+	font-weight normal
+	font-variant normal
+	text-transform none
+	line-height 1
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+// font-icon
+.icon-home:before 
+	content "\e600"
+
+.icon-pencil:before 
+	content "\e606"
+
+.icon-droplet:before 
+	content "\e607"
+
+.icon-paint-format:before 
+	content "\e608"
+
+.icon-image:before 
+	content "\e609"
+
+.icon-camera:before 
+	content "\e60a"
+
+.icon-headphones:before 
+	content "\e60b"
+
+.icon-play:before 
+	content "\e60c"
+
+.icon-bullhorn:before 
+	content "\e60d"
+
+.icon-profile:before 
+	content "\e60e"
+
+.icon-file:before 
+	content "\e601"
+
+.icon-folder:before 
+	content "\e60f"
+
+.icon-folder-open:before 
+	content "\e610"
+
+.icon-tag:before 
+	content "\e611"
+
+.icon-barcode:before 
+	content "\e612"
+
+.icon-qrcode:before 
+	content "\e613"
+
+.icon-cart:before 
+	content "\e614"
+
+.icon-credit:before 
+	content "\e615"
+
+.icon-pushpin:before 
+	content "\e616"
+
+.icon-alarm:before 
+	content "\e617"
+
+.icon-bell:before 
+	content "\e618"
+
+.icon-calendar:before 
+	content "\e619"
+
+.icon-print:before 
+	content "\e61a"
+
+.icon-laptop:before 
+	content "\e605"
+
+.icon-mobile:before 
+	content "\e61b"
+
+.icon-tablet:before 
+	content "\e61c"
+
+.icon-drawer:before 
+	content "\e61d"
+
+.icon-box-add:before 
+	content "\e61e"
+
+.icon-box-remove:before 
+	content "\e61f"
+
+.icon-disk:before 
+	content "\e620"
+
+.icon-undo:before
+	content: "\e634"
+
+.icon-redo:before
+	content "\e635"
+
+.icon-bubbles:before 
+	content "\e621"
+
+.icon-users:before 
+	content "\e603"
+
+.icon-search:before 
+	content "\e622"
+
+.icon-zoomin:before 
+	content "\e623"
+
+.icon-zoomout:before 
+	content "\e624"
+
+.icon-expand:before 
+	content "\e625"
+
+.icon-contract:before 
+	content "\e626"
+
+.icon-lock:before 
+	content "\e604"
+
+.icon-unlocked:before 
+	content "\e627"
+
+.icon-cog:before 
+	content "\e602"
+
+.icon-cog2:before 
+	content "\e628"
+
+.icon-stats:before 
+	content "\e629"
+
+.icon-remove:before 
+	content "\e62a"
+
+.icon-list:before
+	content "\e636"
+
+.icon-numbered-list:before
+	content "\e637"
+
+.icon-download:before 
+	content "\e62b"
+
+.icon-link:before 
+	content "\e62c"
+
+.icon-flag:before 
+	content "\e62d"
+
+.icon-attachment:before 
+	content "\e62e"
+
+.icon-point-up:before 
+	content "\e638"
+
+.icon-point-right:before 
+	content "\e639"
+
+.icon-question:before 
+	content "\e63a"
+
+.icon-info:before 
+	content "\e63b"
+
+.icon-cancel-circle:before 
+	content "\e62f"
+
+.icon-checkmark-circle:before
+	content "\e63c"
+
+.icon-spam:before
+	content "\e642"
+
+.icon-minus:before
+	content "\e643"
+
+.icon-plus:before
+	content "\e644"
+
+.icon-arrow-up-right:before
+	content "\e63d"
+
+.icon-checkbox-checked:before
+	content "\e63e"
+
+.icon-crop:before
+	content "\e63f"
+
+.icon-scissors:before
+	content "\e640"
+
+.icon-font:before 
+	content "\e630"
+
+.icon-text-height:before 
+	content "\e631"
+
+.icon-bold:before 
+	content "\e632"
+
+.icon-table:before
+	content "\e641"	
+
+.icon-google-drive:before
+	content "\e633"
+
+html, body
+	font-family dosis, open_sans, arial, sans-serif
+	font-size 16px
+	height 100%
+	margin 0
+	padding 0
+
+a, a:visited
+	color #00607b
+	text-decoration none
+
+a:hover
+	text-decoration underline
+
+article
+	margin-bottom 3em
+	overflow auto
+
+	h1,h2,h3,h4,h5,h6
+		font-family dosis
+		color #14495d
+	p
+		color #555
+		font-family dosis_light
+		font-size 1.2em
+		text-align justify
+
+form
+	display inline-block
+	width 100%
+
+	table
+		width 100%
+
+		tr
+			height 45px
+
+		label
+			color #777
+
+fieldset
+	border none
+	margin-left 0px
+
+label
+	color #14495d
+	display inline-block
+	padding-right 1em
+	vertical-align top
+
+	a
+		text-decoration underline !important
+
+input, textarea, select
+	border thin solid #ccc
+	border-radius 6px
+	box-sizing border-box
+	font-family inherit
+	margin-bottom 0.5em
+	padding 0.4em
+	resize none
+
+input[type=text], input[type=password], textarea
+	max-width 400px
+	width 100%
+
+.untBtn
+	background-color #ccc
+	background linear-gradient(#ccc, #eee)
+	border 1px solid #555
+	border-bottom-width 3px
+	border-radius 5px 5px 3px 3px
+	color #333
+	cursor pointer
+	display inline-block
+	font-family dosis
+	font-size 16px
+	letter-spacing 1px
+	margin 10px 5px
+	padding 8px 16px
+	text-decoration none
+
+.untBtn:hover
+	background #ccc
+	text-decoration none
+
+.untBtn.small
+	border-bottom-width 2px
+	font-size .7em
+	letter-spacing 0
+	padding 3px 8px
+
+.untBtn.big
+	font-size 1.4em	
+
+.untBtn.untBtnFb, .untBtn.untBtnTwt
+	color #fff !important
+	font-size 0.6em	
+	padding 10px 10px
+	padding-left 50px
+
+.untBtn.untBtnFb:hover, .untBtn.untBtnTwt:hover
+	color #ccc
+	text-decoration none
+
+.untBtn.yellow
+	background-color rgb(245,177,67)
+	background linear-gradient(rgb(245,177,67), rgba(245,177,67,0.8))
+	border-color #4b4c0b
+	color #4b4c0b
+	text-shadow 0 -1px 0 rgba(255, 255, 255, 0.25)
+
+.untBtn.yellow:hover
+	background rgb(245,177,67)
+
+.untBtn.blue
+	background-color rgb(0,93,123)
+	background linear-gradient(rgb(0,93,123), rgba(0,93,123,0.9))
+	border-color #121c29
+	color #fff
+	text-shadow 0 -1px 0 rgba(0, 0, 0, 0.25)
+
+.untBtn.blue:hover
+	background rgb(0,93,123)
+
+.untBtn.darkblue
+	background-color rgb(0,93,123)
+	background linear-gradient(rgb(18,28,41), rgba(18,28,41,0.9))
+	border-color #395B68
+	color #fff
+	text-shadow 0 -1px 0 rgba(0, 0, 0, 0.25)
+
+.untBtn.darkblue:hover
+	background rgb(18,28,41)
+
+.untBtn.red
+	background-color #C33F3F
+	background linear-gradient(#C33F3F,#9C0B0B)
+	border-color #2C0101
+	color #fff
+	text-shadow 0 -1px 0 rgba(0, 0, 0, 0.25)
+
+.untBtn.red:hover
+	background #C33F3F
+
+.untBtnFb
+	background rgb(30,98,169) url("../img/home/fb.png") 10px center no-repeat
+	border-color #143f72
+
+.untBtnFb:hover
+	background rgb(30,98,169) url("../img/home/fb.png") 10px center no-repeat
+
+.untBtnTwt
+	background rgb(30,196,254) url("../img/home/tt.png") 10px center no-repeat
+	border-color #1b9ac7
+
+.untBtnTwt:hover
+	background rgb(30,196,254) url("../img/home/tt.png") 10px center no-repeat
+
+.untBtnDisabled
+	background-color #AAA
+	border-color #777
+
+.chromeframe
+	background-color white
+	font-size 1.2em
+	padding 1em
+	text-align center
+	
+/*** SKELETON***/
+.untHeaderWrapper, .untMainWrapper, .untFooterWrapper
+	width 100%
+
+.untHeaderContent, .untMainContent, .untFooterContent
+	margin 0 auto
+	width 980px
+
+.untHeaderWrapper
+	background-color #555
+
+	.untHeaderContent
+		border-bottom thin solid #ccc
+		margin 0 auto
+		max-width 980px
+		text-align right
+
+.untMainContent
+	padding 2em 0
+
+	.untLoader
+		left 50%
+		position fixed
+		top 50%
+		width 50px
+
+.untLeftContent, .untRightContent
+	display inline-block
+	prefix(box-sizing, border-box)
+	vertical-align top
+	width 49%
+
+.untFooterWrapper
+	background-color #F17A25
+	background linear-gradient(#AE591C,#582D0E)
+	box-sizing: border-box
+	color white
+	min-height 200px
+	text-align center
+	padding 1em 0
+
+.untLine
+	border-top thin solid #111
+	border-bottom thin solid #666
+	margin 2em 0
+
+.untInline
+	display inline-block
+	vertical-align top
+
+.untCenter
+	text-align center
+
+.qtip-default
+	background-color #14495d
+	background linear-gradient(#14495d, #121c29)
+	border-color #0C1225
+	color white
+
+.ui-tooltip-white
+    background-color white
+    background-image linear-gradient(#fff, #eee)
+    border-color #ccc
+    color #14495d
+
+.qtip-content
+	h1, h2, h3, h4, h5, h6
+		font-family dosis_light, dosis, open_sans
+		font-weight normal
+		text-shadow 1px 1px 2px #ccc
+
+.ui-tooltip-white .ui-tooltip-content
+    padding-right 0
