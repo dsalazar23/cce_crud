@@ -12,7 +12,7 @@ class ConnectionProperty {
     private static $host = 'localhost';
     private static $user = 'root';
     private static $password = '';
-    private static $database = 'skeleton';
+    private static $database = 'participantes_rutan';
 
     public static function getHost() {
         if ($_SERVER['SERVER_NAME'] == 'localhost') return 'localhost';

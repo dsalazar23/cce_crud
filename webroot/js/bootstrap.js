@@ -10,7 +10,7 @@
 /**
  * Nombre del Proyecto
  */
-    var PRJCT_NAME = 'Skeleton'
+    var PRJCT_NAME = 'Ecosistema'
 
 /*
  * Ruta relativa del directorio webroot del sitio

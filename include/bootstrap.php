@@ -19,7 +19,7 @@
  * Nombre del Proyecto 
  */
     if (!defined('PRJCT_NAME'))
-        define('PRJCT_NAME', 'Skeleton');
+        define('PRJCT_NAME', 'Ecosistema');
 
 /**
  * Ruta absoluta al directorio donde está hospedada la aplicación.
