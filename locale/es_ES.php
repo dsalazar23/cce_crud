@@ -15,7 +15,7 @@ $dicc = array(
 		'password' => 'Contraseña',		
 
 		// Footer
-		'footer' => 'Skeleton &copy; 2014 - Creado por JpBaena13',
+		'footer' => 'Ruta N © 2017 - Creado por Lantia SAS',
 
 		// Home
 		'right_content' => ' Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 

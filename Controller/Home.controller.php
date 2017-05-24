@@ -9,6 +9,7 @@
 
 
 require_once CONTROLLER . 'Controller.php';
+require_once CONTROLLER . 'Empresa.controller.php';
 
 /**
  * Controlador para Home
@@ -24,8 +25,7 @@ class HomeController extends Controller {
 		global $auth;
 
 		if ( $auth->hasSession() ) {
-			$userDTO = $this->user->getUserDTO();
-			include_once PAGE . 'Index.php';
+			new EmpresaController();
 
 		} else {
 			include_once PAGE . 'Home.php';

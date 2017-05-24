@@ -35,6 +35,7 @@
         trigger_error('Error al cargar el Bootstrap', E_USER_ERROR);
         exit();
     }
+    //echo aesEncrypt('1234567890administrador');exit;
 
     try {
 

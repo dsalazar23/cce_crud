@@ -17,5 +17,16 @@
 <![endif]-->
 
 <div class="untHeaderContent">
-    <img src="<?php echo WEBROOT_URL ?>img/default/header.png" alt="Header - Skeleton" width="980px" height="120px"/>
+    <!-- <img src="<?php echo WEBROOT_URL ?>img/default/header.png" alt="Header - Skeleton" width="980px" height="120px"/> -->
+    <div class="cabeceraExpertos">
+    	<div class="logoExpertos">
+    		
+    	</div>
+    	<div class="tituloExpertos">
+    		<h1>Conexión con el ecosistema</h1>
+    	</div>
+    </div>
+    <?php if($auth->hasSession()) { ?>
+        <a href="<?php echo ROOT_URL?>Login/Clear" class="closeSection"><?php __('logout')?></a>
+    <?php } ?>
 </div>
