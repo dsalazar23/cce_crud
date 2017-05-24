@@ -25,48 +25,77 @@ class EmpresaMsDAO extends genEmpresaMsDAO {
 		$sqlQuery = new SqlQuery($sql);
 
 		$tab = QueryExecutor::execute($sqlQuery);
-		$ret = array();
+		$ret = array();  //arreglo de EmpresaDTO
 
 
 		if(count($tab) != 0)
 		{
 			$row = $tab[0];
 			$empresaActual = $row['id_empresa'];
-			$interesesEmpresa = array();
-			$empresaDTOs = array();
 		} else{
+			return $ret;
 
 		}
+		
+		$i = 0;
+		$row;
 
-		for ($i = 0; $i < count($tab); $i++) {
-			$row = $tab[$i];
-			$guardarIntereses = true;
-			$interesesEmpresa = array();
-
-			if($guardarIntereses == true)
+		while ($i < count($tab)) {
+			/*if($i == count($tab))
 			{
-				$empresaDTO = new EmpresaDTO();
-				$empresaDTO->idEmpresa = $row['id_empresa'];
-				$empresaDTO->nombreEmpresa = $row['nombre_empresa'];
-				for($e = 0; $e< count($tab); $e++)
+				$empresaDTO->intereses = $interesesEmpresa; //se asigna el arreglo de intereses
+				array_push($ret, $empresaDTO);				//se encola el último DTO
+				$i++;
+						
+			}*/
+			
+				$row = $tab[$i];
+				$guardarIntereses = true;
+				$interesesEmpresa = array();
+			
+				if($guardarIntereses == true)
 				{
-					$row = $tab[$e];
-					if($row['id_empresa'] == $empresaActual)
-					{
-						array_push($interesesEmpresa, $row['nombre']);
-					} else{
-						$EmpresaDTO->intereses = $interesesEmpresa;
-						$empresaActual = $row['id_empresa'];
-						$e = $e - 1;
-						$i = $e;
-						$guardarIntereses = false;
-						$e = count($tab);
-					}
-					
-					
-				}				
-			}
+					$empresaDTO = new EmpresaDTO();
+					$empresaDTO->idEmpresa = $row['id_empresa'];
+					$empresaDTO->nombreEmpresa = $row['nombre_empresa'];
+					for($e = $i; $e < count($tab); $e++)
+					{	
+						//se controla el final de la consulta para guardar la última empresaDAO
+						if($e == (count($tab) - 1))
+						{
+							$row = $tab[$e];
+							array_push($interesesEmpresa, $row['nombre']);
+							$empresaDTO->intereses = $interesesEmpresa; //se asigna el arreglo de intereses
+							array_push($ret, $empresaDTO);				//se encola el último DTO
+							$e++;
+							$i = $e;
+							$guardarIntereses = false;
+
+						} else{						//si todavía no he llegado a la última fila de la consulta
+							$row = $tab[$e];
+							if($row['id_empresa'] == $empresaActual)
+							{
+								array_push($interesesEmpresa, $row['nombre']);
+								// if ($e == (count($tab) - 1)) {
+								// 	$e++;
+								// }
+							} else{
+								$empresaDTO->intereses = $interesesEmpresa; //se asigna el arreglo de intereses ya que se cambio de empresa y no hay mas intereses de la empresa actual que ingresar. 											
+								$empresaActual = $row['id_empresa'];
+								$i = $e;
+								array_push($ret, $empresaDTO); //se encola la última empresaDTO al arreglo de empresasDTO
+								$guardarIntereses = false;
+								$e = count($tab) + 1;
+							}	
+						}			
+						
+					}				
+				}
+			
 		}
-	
+
+		return $ret;	
+	}
 }
+
 ?>

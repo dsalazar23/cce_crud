@@ -32,9 +32,47 @@
         <div class="untMainWrapper">
             <div class="untMainContent">
         
-                <h1> Hola <?php echo $userDTO->username ?></h1>
-
-                <a href="<?php echo ROOT_URL?>Login/Clear" class="untBtn yellow"><?php __('logout')?></a>
+                <div class="CajaListaExpertos">
+                    <table id="listaExpertos">
+                        <thead>
+                            <tr>
+                                <th>Identificador</th>
+                                <th>Nombre</th>
+                                <th>Intereses</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                $i = 0;
+                                foreach ($empresaDTOs as $empresaDTO) { 
+                            ?>
+                                <tr>
+                                    <td class="name">
+                                        <?php echo $empresaDTO->idEmpresa ?>
+                                    </td>
+                                    <td class="ocupacion">
+                                        <?php echo $empresaDTO->nombreEmpresa ?>
+                                    </td>
+                                    <td class="skills">
+                                        <?php 
+                                            $tempIntereses = $empresaDTO->intereses;
+                                            for ($j = 0; $j < count($tempIntereses); $j++){
+                                                echo $tempIntereses[$j] .", ";
+                                            }
+                                        ?>
+                                    </td>
+                                    <td class="options">
+                                        <!-- <a class="btnAction" href="<?php echo ROOT_URL . 'Expert/Delete/' . $expertDTO->id ?>">Borrar</a>
+                                        <a class="btnAction" href="<?php echo ROOT_URL . 'Expert/Edit/' . $expertDTO->id ?>">Editar</a> -->
+                                    </td>
+                                </tr>
+                                
+                            <?php $i++; } ?>
+                        </tbody>
+                    </table>
+                    <a href="<?php echo ROOT_URL ?>Expert/NewExpert" class="btnAction">Nuevo</a>
+                </div>
                 
             </div> <!-- Fin untMainContent -->
         </div> <!-- Fin untMainWrapper -->
