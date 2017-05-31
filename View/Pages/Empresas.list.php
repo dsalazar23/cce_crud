@@ -49,7 +49,7 @@
                             ?>
                                 <tr>
                                     <td class="name">
-                                        <?php echo $empresaDTO->idEmpresa ?>
+                                        <?php echo $empresaDTO->id ?>
                                     </td>
                                     <td class="ocupacion">
                                         <?php echo $empresaDTO->nombreEmpresa ?>
@@ -63,15 +63,15 @@
                                         ?>
                                     </td>
                                     <td class="options">
-                                        <!-- <a class="btnAction" href="<?php echo ROOT_URL . 'Expert/Delete/' . $expertDTO->id ?>">Borrar</a>
-                                        <a class="btnAction" href="<?php echo ROOT_URL . 'Expert/Edit/' . $expertDTO->id ?>">Editar</a> -->
+                                        <a class="btnAction" href="<?php echo ROOT_URL . 'Empresa/Delete/' . $empresaDTO->id ?>">Borrar</a>
+                                        <a class="btnAction" href="<?php echo ROOT_URL . 'Empresa/Edit/' . $empresaDTO->id ?>">Editar</a>
                                     </td>
                                 </tr>
                                 
                             <?php $i++; } ?>
                         </tbody>
                     </table>
-                    <a href="<?php echo ROOT_URL ?>Expert/NewExpert" class="btnAction">Nuevo</a>
+                    <a href="<?php echo ROOT_URL ?>Empresa/NewEmpresa" class="btnAction">Nuevo</a>
                 </div>
                 
             </div> <!-- Fin untMainContent -->

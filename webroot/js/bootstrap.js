@@ -10,7 +10,7 @@
 /**
  * Nombre del Proyecto
  */
-    var PRJCT_NAME = 'Ecosistema'
+    var PRJCT_NAME = 'front/registro-ipt2/Ecosistema'
 
 /*
  * Ruta relativa del directorio webroot del sitio

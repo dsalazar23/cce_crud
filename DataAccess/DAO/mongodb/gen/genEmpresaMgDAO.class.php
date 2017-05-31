@@ -39,17 +39,17 @@ class genEmpresaMgDAO implements EmpresaDAOInterface {
      * Retorna el objeto de dominio que corresponde a la clave primaria
      * compuesta especificada.
      *
-     * @param string $idEmpresa Composición de la clave primaria.
+     * @param string $id Composición de la clave primaria.
      *
      * @return Empresa Objeto que tiene como clave primaria $id
      */
-    public function load($idEmpresa) {
+    public function load($id) {
         $db = Connection::getDatabase();
 
         $collection = $db->empresas;
 
         $keys = array();
-		$keys["idEmpresa"] = (gettype($idEmpresa) == 'string') ? new MongoID($idEmpresa) : $idEmpresa;
+		$keys["_id"] = (gettype($id) == 'string') ? new MongoID($id) : $id;
 
         $result = $collection->findOne( $keys );
 
@@ -79,16 +79,16 @@ class genEmpresaMgDAO implements EmpresaDAOInterface {
      * Elimina el registro que tiene clave primariaespecificada desde la 
      * base de datos.
      *
-     * @param <type> $idEmpresa Clave primaria compuesta del registro a eliminar.
+     * @param <type> $id Clave primaria compuesta del registro a eliminar.
      * @see executeUpdate()
      */
-    public function delete($idEmpresa) {
+    public function delete($id) {
         $db = Connection::getDatabase();
 
         $collection = $db->empresas;
 
         $keys = array();
-		$keys["idEmpresa"] = (gettype($idEmpresa) == 'string') ? new MongoID($idEmpresa) : $idEmpresa;
+		$keys["_id"] = (gettype($id) == 'string') ? new MongoID($id) : $id;
 
         $collection->remove( $keys );
     }
@@ -272,7 +272,6 @@ class genEmpresaMgDAO implements EmpresaDAOInterface {
         $empresaDTO->_id = $row['_id'];
         $empresaDTO->id = $row['_id'];
         
-		$empresaDTO->idEmpresa = $row['idEmpresa'];
 		$empresaDTO->nombreEmpresa = $row['nombreEmpresa'];
 		$empresaDTO->logo = $row['logo'];
 		$empresaDTO->descripcion = $row['descripcion'];

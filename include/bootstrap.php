@@ -19,7 +19,7 @@
  * Nombre del Proyecto 
  */
     if (!defined('PRJCT_NAME'))
-        define('PRJCT_NAME', 'Ecosistema');
+        define('PRJCT_NAME', 'front' . DS . 'registro-ipt2' . DS . 'Ecosistema');
 
 /**
  * Ruta absoluta al directorio donde está hospedada la aplicación.

@@ -5,7 +5,7 @@ $dicc = array(
 		'keywords' => 'Librería PHP, desarrollo web, desarrollo agíl',
 		
 		// Home title
-		'home_title' => 'Skeleton',
+		'home_title' => 'Conexión con el ecosistema',
 
 		// Home description
 		'home_description' => 'Skeleton, librería rápida para el desarrollo de aplicaciones web con PHP',
