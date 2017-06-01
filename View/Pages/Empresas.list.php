@@ -63,7 +63,7 @@
                                         ?>
                                     </td>
                                     <td class="options">
-                                        <a class="btnAction" href="<?php echo ROOT_URL . 'Empresa/Delete/' . $empresaDTO->id ?>">Borrar</a>
+                                        <a onclick="return confirm('¿Desea borrar el registro?')" class="btnAction" href="<?php echo ROOT_URL . 'Empresa/Delete/' . $empresaDTO->id ?>">Borrar</a>
                                         <a class="btnAction" href="<?php echo ROOT_URL . 'Empresa/Edit/' . $empresaDTO->id ?>">Editar</a>
                                     </td>
                                 </tr>
