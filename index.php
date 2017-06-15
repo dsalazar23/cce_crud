@@ -125,8 +125,8 @@
         printLog($exc);
 
         // Enviando Email
-        $emailConn = new EmailConnection();
-        $emailConn->sendMail('admin@unnotes.com', '[Support] Error Request', $exc);
+        /*$emailConn = new EmailConnection();
+        $emailConn->sendMail('admin@unnotes.com', '[Support] Error Request', $exc);*/
 
         header('HTTP/1.0 500 Internal Server Error');
         include ERRORS . 'requestNotProcessed.php';

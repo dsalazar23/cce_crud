@@ -44,6 +44,8 @@
                         <div><span>logo:</span> <input type="text" name="logo" placeholder="introduce el nombre del archivo de imagen del logo"></div>
                         <div><span>Descripción:</span> <textarea rows="5" cols="50" type="text" name="descripcion" placeholder="Descripción"></textarea></div>
                         <div><span>Web:</span> <input type="text" name="url" placeholder="Página web de la empresa"></div>
+                        <div><span>Email:</span> <input type="text" name="email" placeholder="Email de contacto"></div>
+                        <div><span>Telefono:</span> <input type="text" name="telefono" placeholder="Teléfono de contacto"></div>
                         <div><span>Intereses:</span></div>
                         <div>
                             <?php foreach ($interesesDTOs as $interesesDTO) { ?>

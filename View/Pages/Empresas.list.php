@@ -36,9 +36,11 @@
                     <table id="listaExpertos">
                         <thead>
                             <tr>
-                                <th>Identificador</th>
                                 <th>Nombre</th>
                                 <th>Intereses</th>
+                                <th>Teléfono</th>
+                                <th>Sitio Web</th>
+                                <th>Email</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -48,9 +50,6 @@
                                 foreach ($empresaDTOs as $empresaDTO) { 
                             ?>
                                 <tr>
-                                    <td class="name">
-                                        <?php echo $empresaDTO->id ?>
-                                    </td>
                                     <td class="ocupacion">
                                         <?php echo $empresaDTO->nombreEmpresa ?>
                                     </td>
@@ -61,6 +60,15 @@
                                                 echo $tempIntereses[$j] .", ";
                                             }
                                         ?>
+                                    </td>
+                                    <td class="telefono">
+                                        <?php echo $empresaDTO->telefono ?>
+                                    </td>
+                                    <td class="url">
+                                        <?php echo $empresaDTO->url ?>
+                                    </td>
+                                    <td class="email">
+                                        <?php echo $empresaDTO->email ?>
                                     </td>
                                     <td class="options">
                                         <a onclick="return confirm('¿Desea borrar el registro?')" class="btnAction" href="<?php echo ROOT_URL . 'Empresa/Delete/' . $empresaDTO->id ?>">Borrar</a>

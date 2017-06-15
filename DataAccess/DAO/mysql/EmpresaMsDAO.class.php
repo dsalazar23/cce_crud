@@ -15,7 +15,7 @@ class EmpresaMsDAO extends genEmpresaMsDAO {
 	*/
 
 	public function queryEmpresasWithIntereses (){
-		$sql = "SELECT empresas.id, empresas.nombre_empresa, intereses.nombre
+		$sql = "SELECT empresas.id, empresas.nombre_empresa, empresas.url, empresas.email, empresas.telefono, intereses.nombre
 				FROM empresas 
 				INNER JOIN intereses_empresa 
 				ON empresas.id = intereses_empresa.empresa
@@ -52,6 +52,9 @@ class EmpresaMsDAO extends genEmpresaMsDAO {
 					$empresaDTO = new EmpresaDTO();
 					$empresaDTO->id = $row['id'];
 					$empresaDTO->nombreEmpresa = $row['nombre_empresa'];
+					$empresaDTO->url = $row['url'];
+					$empresaDTO->telefono = $row['telefono'];
+					$empresaDTO->email = $row['email'];
 					for($e = $i; $e < count($tab); $e++)
 					{	
 						//se controla el final de la consulta para guardar la última empresaDAO

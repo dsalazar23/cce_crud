@@ -27,3 +27,52 @@ Stack trace:
 #4 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59) : eval()'d code(1): Controller->__construct()
 #5 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59): eval()
 #6 {main}
+exception 'Exception' with message 'Column 'id' cannot be null' in C:\wamp64\www\front\registro-ipt2\ecosistema\Config\DataSource\QueryExecutor.class.php:123
+Stack trace:
+#0 C:\wamp64\www\front\registro-ipt2\ecosistema\Config\DataSource\QueryExecutor.class.php(148): QueryExecutor::executeUpdate(Object(SqlQuery), Object(Connection))
+#1 C:\wamp64\www\front\registro-ipt2\ecosistema\Lib\AbstractDAO.class.php(95): QueryExecutor::executeInsert(Object(SqlQuery))
+#2 C:\wamp64\www\front\registro-ipt2\ecosistema\DataAccess\DAO\mysql\gen\genEmpresaMsDAO.class.php(35): AbstractDAO->executeInsert(Object(SqlQuery))
+#3 C:\wamp64\www\front\registro-ipt2\ecosistema\Model\genModel\genEmpresa.class.php(54): genEmpresaMsDAO->insert(Object(EmpresaDTO))
+#4 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Empresa.controller.php(54): genEmpresa->save()
+#5 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(43) : eval()'d code(1): EmpresaController->Save(Array)
+#6 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(43): eval()
+#7 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59) : eval()'d code(1): Controller->__construct()
+#8 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59): eval()
+#9 {main}
+exception 'Exception' with message 'Column 'id' cannot be null' in C:\wamp64\www\front\registro-ipt2\ecosistema\Config\DataSource\QueryExecutor.class.php:123
+Stack trace:
+#0 C:\wamp64\www\front\registro-ipt2\ecosistema\Config\DataSource\QueryExecutor.class.php(148): QueryExecutor::executeUpdate(Object(SqlQuery), Object(Connection))
+#1 C:\wamp64\www\front\registro-ipt2\ecosistema\Lib\AbstractDAO.class.php(95): QueryExecutor::executeInsert(Object(SqlQuery))
+#2 C:\wamp64\www\front\registro-ipt2\ecosistema\DataAccess\DAO\mysql\gen\genEmpresaMsDAO.class.php(35): AbstractDAO->executeInsert(Object(SqlQuery))
+#3 C:\wamp64\www\front\registro-ipt2\ecosistema\Model\genModel\genEmpresa.class.php(54): genEmpresaMsDAO->insert(Object(EmpresaDTO))
+#4 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Empresa.controller.php(54): genEmpresa->save()
+#5 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(43) : eval()'d code(1): EmpresaController->Save(Array)
+#6 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(43): eval()
+#7 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59) : eval()'d code(1): Controller->__construct()
+#8 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59): eval()
+#9 {main}
+exception 'Exception' with message 'Column 'id' cannot be null' in C:\wamp64\www\front\registro-ipt2\ecosistema\Config\DataSource\QueryExecutor.class.php:123
+Stack trace:
+#0 C:\wamp64\www\front\registro-ipt2\ecosistema\Config\DataSource\QueryExecutor.class.php(148): QueryExecutor::executeUpdate(Object(SqlQuery), Object(Connection))
+#1 C:\wamp64\www\front\registro-ipt2\ecosistema\Lib\AbstractDAO.class.php(95): QueryExecutor::executeInsert(Object(SqlQuery))
+#2 C:\wamp64\www\front\registro-ipt2\ecosistema\DataAccess\DAO\mysql\gen\genEmpresaMsDAO.class.php(35): AbstractDAO->executeInsert(Object(SqlQuery))
+#3 C:\wamp64\www\front\registro-ipt2\ecosistema\Model\genModel\genEmpresa.class.php(54): genEmpresaMsDAO->insert(Object(EmpresaDTO))
+#4 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Empresa.controller.php(54): genEmpresa->save()
+#5 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(43) : eval()'d code(1): EmpresaController->Save(Array)
+#6 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(43): eval()
+#7 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59) : eval()'d code(1): Controller->__construct()
+#8 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59): eval()
+#9 {main}
+exception 'Exception' with message 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.nombre
+				FROM empresas 
+				INNER JOIN intereses_empresa 
+				ON empresas.' at line 1' in C:\wamp64\www\front\registro-ipt2\ecosistema\Config\DataSource\QueryExecutor.class.php:34
+Stack trace:
+#0 C:\wamp64\www\front\registro-ipt2\ecosistema\DataAccess\DAO\mysql\EmpresaMsDAO.class.php(27): QueryExecutor::execute(Object(SqlQuery))
+#1 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Empresa.controller.php(24): EmpresaMsDAO->queryEmpresasWithIntereses()
+#2 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(36): EmpresaController->DefaultView()
+#3 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Home.controller.php(28): Controller->__construct()
+#4 C:\wamp64\www\front\registro-ipt2\ecosistema\Controller\Controller.php(36): HomeController->DefaultView()
+#5 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59) : eval()'d code(1): Controller->__construct()
+#6 C:\wamp64\www\front\registro-ipt2\ecosistema\index.php(59): eval()
+#7 {main}

@@ -22,6 +22,7 @@ class EmpresaController extends Controller {
 	 */
 	public function DefaultView() {
 		$empresaDTOs = FactoryDAO::getEmpresaDAO()->queryEmpresasWithIntereses();
+
 		
 		include_once PAGE . 'Empresas.list.php';
 	}
@@ -46,22 +47,31 @@ class EmpresaController extends Controller {
 	public function Save() {
 		$idEmpresa = isset($_GET['id']) ? $_GET['id'] : null;
 
-		$empresa = new Empresa($idEmpresa);
-		$empresa->setNombreEmpresa($_POST['nombre']);
-		$empresa->setLogo($_POST['logo']);
-		$empresa->setDescripcion($_POST['descripcion']);
-		$empresa->setUrl($_POST['url']);
-		$empresa->save();
+		if (!$idEmpresa) { // Si es un valor null, se hace un CREATE
+			$empresa = new Empresa($idEmpresa);
+			$empresa->setNombreEmpresa($_POST['nombre']);
+			$empresa->setLogo($_POST['logo']);
+			$empresa->setDescripcion($_POST['descripcion']);
+			$empresa->setUrl($_POST['url']);
+			$empresa->setTelefono($_POST['telefono']);
+			$empresa->setEmail($_POST['email']);
+			$empresa->save();
 
-		$idEmpresa = $empresa->getId();
+			$idEmpresa = $empresa->getId();
 
-		$inter = $_POST['intereses'];
-		foreach ($inter as $it) {
-			$interesesEmpresa = new InteresesEmpresa(null);
-			$interesesEmpresa->setInteresEmpresa($it);
-			$interesesEmpresa->setEmpresa($idEmpresa);
-			$interesesEmpresa->save();
+			$inter = $_POST['intereses'];
+			foreach ($inter as $it) {
+				$interesesEmpresa = new InteresesEmpresa(null);
+				$interesesEmpresa->setInteresEmpresa($it);
+				$interesesEmpresa->setEmpresa($idEmpresa);
+				$interesesEmpresa->save();
+			}
+		} else { // Si no es un valor null, se hace un UPDATE
+			$arrayIntereses = $_POST['intereses'];
+			FactoryDAO::getInteresesEmpresaDAO()->queryUpdateInteresesByEmpresas($idEmpresa, $arrayIntereses);
 		}
+
+			
 
 		header('Location: ' . ROOT_URL );	
 		
@@ -102,10 +112,23 @@ class EmpresaController extends Controller {
 		$interesesToEdit = FactoryDAO::getIntereseDAO()->queryGetByEmpresa($empresaDTO->id);
 		$interesesDTOs = FactoryDAO::getIntereseDAO()->queryAll();
 
-		// echo "<pre>";
-		// print_r($interesesToEdit);
-		// echo "</pre>";
-		// exit;
+
+		foreach ($interesesDTOs as $interesDTO){
+			foreach ($interesesToEdit as $interes){
+				if ($interesDTO->id == $interes['interes_empresa']){
+					$interesDTO->selected = 1;
+					// echo $interes['interes_empresa'] . " y " . $interesDTO->id . "<br>";
+					break;
+				} else {
+					$interesDTO->selected = 0;
+				}
+			}
+		}
+
+		/*echo "<pre>";
+		print_r($interesesDTOs);
+		echo "</pre>";
+		exit;*/
 
 		include_once PAGE . "Empresa.edit.php";
 	}

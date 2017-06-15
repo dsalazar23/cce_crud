@@ -57,17 +57,25 @@
                             <input type="text" name="url" value="<?php echo $empresaDTO->url ?>" placeholder="Página web de la empresa">
                         </div>
                         <div>
+                            <span>Email:</span> 
+                            <input type="text" name="email" value="<?php echo $empresaDTO->email ?>" placeholder="Email de contacto">
+                        </div>
+                        <div>
+                            <span>Teléfono:</span> 
+                            <input type="text" name="telefono" value="<?php echo $empresaDTO->telefono ?>" placeholder="Teléfono de contacto">
+                        </div>
+                        <div>
                             <span>Intereses:</span></div>
                             <div>
-                                <?php foreach ($interesesDTOs as $interesesDTO) { 
-                                        foreach ($interesesToEdit as $interes) { 
-                                            if ($interes['id'] == $interesesDTO->id) {
-                                ?>
-                                                <label><input type="checkbox" name="intereses[]" value="<?php echo $interesesDTO->id; ?>" checked><?php echo $interesesDTO->nombre; ?></label>
-                                            <?php } ?>
-                                                
-                                            <?php } ?>
-                                        <label><input type="checkbox" name="intereses[]" value="<?php echo $interesesDTO->id; ?>"><?php echo $interesesDTO->nombre; ?></label>
+                                <?php foreach ($interesesDTOs as $interesDTO) { ?>
+                                    <?php if ($interesDTO->selected == 1) { ?>
+                                        <label>
+                                            <input type="checkbox" name="intereses[]" value="<?php echo $interesDTO->id; ?>" checked><?php echo $interesDTO->nombre; ?>
+                                        </label>
+                                    <?php } else { ?>
+                                        <label>
+                                            <input type="checkbox" name="intereses[]" value="<?php echo $interesDTO->id; ?>"><?php echo $interesDTO->nombre; ?></label>
+                                    <?php } ?>
                                 <?php } ?>
                             </div>
                         <div class="btnsAction">

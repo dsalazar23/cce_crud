@@ -197,6 +197,22 @@ class genEmpresaMgDAO implements EmpresaDAOInterface {
         return $this->getList( $cursor );
     }
 
+    public function queryByTelefono($value) {
+        $db = Connection::getDatabase();
+        $collection = $db->empresas;
+        $cursor = $collection->find( array('telefono' => $value) );
+
+        return $this->getList( $cursor );
+    }
+
+    public function queryByEmail($value) {
+        $db = Connection::getDatabase();
+        $collection = $db->empresas;
+        $cursor = $collection->find( array('email' => $value) );
+
+        return $this->getList( $cursor );
+    }
+
     
     /*
      * Las siguiente son el conjunto de funciones que permiten eliminar registros
@@ -230,6 +246,22 @@ class genEmpresaMgDAO implements EmpresaDAOInterface {
         $db = Connection::getDatabase();
         $collection = $db->empresas;
         $collection->remove( array('url' => $value) );
+
+        return;
+    }
+
+    public function deleteByTelefono($value){
+        $db = Connection::getDatabase();
+        $collection = $db->empresas;
+        $collection->remove( array('telefono' => $value) );
+
+        return;
+    }
+
+    public function deleteByEmail($value){
+        $db = Connection::getDatabase();
+        $collection = $db->empresas;
+        $collection->remove( array('email' => $value) );
 
         return;
     }
@@ -276,6 +308,8 @@ class genEmpresaMgDAO implements EmpresaDAOInterface {
 		$empresaDTO->logo = $row['logo'];
 		$empresaDTO->descripcion = $row['descripcion'];
 		$empresaDTO->url = $row['url'];
+		$empresaDTO->telefono = $row['telefono'];
+		$empresaDTO->email = $row['email'];
 
         return $empresaDTO;
     }
